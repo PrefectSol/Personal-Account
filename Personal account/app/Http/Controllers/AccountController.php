@@ -38,7 +38,6 @@ class AccountController extends Controller
         $dateofissueofthepassport = htmlspecialchars ($_POST["dateofissueofthepassport"]);
         $password = Hash::make(htmlspecialchars ($_POST["password"]));
 
-
         DB::table('users')->where('id', '=', $userId)->update(['gender' => $gender]);
         DB::table('users')->where('id', '=', $userId)->update(['country' => $country]);
         DB::table('users')->where('id', '=', $userId)->update(['email' => $email]);
@@ -48,7 +47,6 @@ class AccountController extends Controller
         DB::table('users')->where('id', '=', $whoisstringsuedthepassport)->update(['country' => $whoisstringsuedthepassport]);
         DB::table('users')->where('id', '=', $userId)->update(['dateofissueofthepassport' => $dateofissueofthepassport]);
         DB::table('users')->where('id', '=', $userId)->update(['password' => $password]);
-
 
         return redirect(route('user.account'));
     }

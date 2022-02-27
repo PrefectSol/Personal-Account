@@ -72,7 +72,6 @@
         "Y", "y", "U", "u", "I", "i", "O", "o", "P", "p"];
         var text = "";
         var passwordLenght = Math.floor(Math.random() * 15) + 5 
-
         for(let i = 0; i < passwordLenght; i++){
             var el = Math.floor(Math.random() * 20)
             text += symbols[el];
@@ -87,7 +86,6 @@
         padding-left: 440px;
         padding-right: 440px;
     }
-
     .registration-standart{
       float: left;
     }
@@ -95,7 +93,6 @@
     .registration-passport{
       float: right;
     }
-
     #form-password{
       position: relative;
       right: 100px;

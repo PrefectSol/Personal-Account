@@ -98,8 +98,41 @@
   </footer>
 </div>
 
-<style>
+<script>
+  $(document).ready(function(){
+    $('button.save').on('click', function(){
+      var genderValue = $('input.gender').val();
+      var countryValue = $('input.country').val();
+      var emailValue = $('input.email').val();
+      var passportseriesValue = $('input.passportseries').val();
+      var passportnumberValue = $('input.passportnumber').val();
+      var fullnameValue = $('input.fullname').val();
+      var whoisstringsuedthepassportValue = $('input.whoisstringsuedthepassport').val();
+      var dateofissueofthepassportValue = $('input.dateofissueofthepassport').val();
+      var passwordValue = $('input.password').val();
 
+      $.ajax({
+        method: "POST",
+        url: "ajaxHandler.php",
+        data: { 
+          gender: genderValue, 
+          country: countryValue,
+          email: emailValue, 
+          passportseries: passportseriesValue,
+          passportnumber: passportnumberValue, 
+          fullname: fullnameValue,
+          whoisstringsuedthepassport: whoisstringsuedthepassportValue, 
+          dateofissueofthepassport: dateofissueofthepassportValue,
+          password: passwordValue }
+      })
+        .done(function( msg ) {
+          alert( "Data Saved: " + msg );
+        });
+    })
+  })
+</script> 
+
+<style>
   .exit{
     border: 1px solid black;
     position: relative;
